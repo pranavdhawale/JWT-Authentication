@@ -5,7 +5,16 @@ GET http://localhost:3000/users
 ### get post list
 
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0MjgwNH0.AP21BHiFzmqSkdn7DPyZMczIqlYv0z9IVKR-ZLQEPcY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NjY2MiwiZXhwIjoxNjY2ODQ2NjgyfQ.iVVeLGIzIy_s6AIFnf5rbDHX33xaMqyz5A4mvSZKwCY
+
+### refresh token
+
+POST http://localhost:3000/token
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NjY0MH0.fAW7s5ibM-KZojw71TQDD236Hm5mLPLWGHH9tcH7Lwo"
+}
 
 ### create user
 
@@ -13,16 +22,16 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name": "noddy",
-    "password": "noddy@123"
+    "name": "deep",
+    "password": "deep@123"
 }
 
 ###
 
-POST http://localhost:4000/login
+POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "name": "noddy",
-    "password": "noddy@123"
+    "name": "deep",
+    "password": "deep@123"
 }

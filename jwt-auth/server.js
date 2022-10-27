@@ -24,12 +24,25 @@ const posts = [
     }
 ]
 
+let refreshTokens = []
+
 app.get('/users', (req, res) => {
     res.json(users)
 });
 
 app.get('/posts', authenticateToken, (req, res) => {
     res.json(posts.filter(post => post.username === req.user.name))
+});
+
+app.post('/token', (req, res) => {
+    const refreshToken = req.body.token
+    if(refreshToken == null) return res.sendStatus(401)
+    if(!refreshTokens.includes(refreshToken)) return res.sendStatus(403)
+    jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET, (err, user) => {
+        if(err) return res.sendStatus(403)
+        const accessToken = generateAccessToken({name: user.name})
+        res.json({accessToken: accessToken})
+    })
 });
 
 
@@ -57,6 +70,7 @@ app.post('/login', async (req, res) => {
             
             const accessToken = generateAccessToken(user)
             const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+            refreshTokens.push(refreshToken)
             res.json({ accessToken: accessToken, refreshToken: refreshToken })
         } else {
             res.send('Not Allowed')
