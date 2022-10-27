@@ -44,7 +44,6 @@ app.post('/register', async (req, res) => {
     }
 });
 
-
 app.post('/login', async (req, res) => {
     const user = users.find(user => user.name === req.body.name)
     if (user == null) {
@@ -56,8 +55,9 @@ app.post('/login', async (req, res) => {
             const username = req.body.name
             const user = { name: username }
             
-            const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET)
-            res.json({ accessToken: accessToken })
+            const accessToken = generateAccessToken(user)
+            const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_SECRET)
+            res.json({ accessToken: accessToken, refreshToken: refreshToken })
         } else {
             res.send('Not Allowed')
         }
@@ -77,6 +77,10 @@ function authenticateToken(req, res, next) {
         req.user = user
         next()
     })
+}
+
+function generateAccessToken(user) {
+    return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '20s' })  
 }
 
 app.listen(3000, () => {

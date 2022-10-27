@@ -13,16 +13,16 @@ POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name": "deep",
-    "password": "deep@123"
+    "name": "noddy",
+    "password": "noddy@123"
 }
 
 ###
 
-POST http://localhost:3000/login
+POST http://localhost:4000/login
 Content-Type: application/json
 
 {
-    "name": "deep",
-    "password": "deep@123"
+    "name": "noddy",
+    "password": "noddy@123"
 }
