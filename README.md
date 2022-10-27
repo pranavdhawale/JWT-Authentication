@@ -19,3 +19,10 @@ header.payload.signature
 ```
 
 ![STRUCTURE_OF_JWT](img/Screenshot%20from%202022-10-27%2010-45-57.png)
+
+### Source
+
+#### **WEB DEV SIMPLIFIED**
+- [What Is JWT and Why Should You Use JWT](https://youtu.be/7Q17ubqLfaM)
+- [Build Node.js User Authentication - Password Login](https://youtu.be/Ud5xKCYQTjM)
+- [JWT Authentication Tutorial - Node.js](https://youtu.be/mbsmsi7l3r4)
