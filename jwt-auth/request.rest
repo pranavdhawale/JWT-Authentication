@@ -5,7 +5,7 @@ GET http://localhost:3000/users
 ### get post list
 
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NjY2MiwiZXhwIjoxNjY2ODQ2NjgyfQ.iVVeLGIzIy_s6AIFnf5rbDHX33xaMqyz5A4mvSZKwCY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NzQwNywiZXhwIjoxNjY2ODQ3NDI3fQ.bOGa24OWsMLSL8-fToVEhTKALkB0xCY2AHRy3kYFDTg
 
 ### refresh token
 
@@ -13,7 +13,16 @@ POST http://localhost:3000/token
 Content-Type: application/json
 
 {
-    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NjY0MH0.fAW7s5ibM-KZojw71TQDD236Hm5mLPLWGHH9tcH7Lwo"
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NzM1NX0.rzHTixL99Dr2AwuVcUSvtFfqtVpihM665qad9VBKWTo"
+}
+
+### delete token
+
+DELETE http://localhost:3000/logout
+Content-Type: application/json
+
+{
+    "token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiZGVlcCIsImlhdCI6MTY2Njg0NzM1NX0.rzHTixL99Dr2AwuVcUSvtFfqtVpihM665qad9VBKWTo"
 }
 
 ### create user
