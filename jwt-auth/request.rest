@@ -1,1 +1,27 @@
+### get user list
+
+GET http://localhost:3000/users
+
+### get post list
+
 GET http://localhost:3000/posts
+
+### create user
+
+POST http://localhost:3000/register
+Content-Type: application/json
+
+{
+    "name": "noddy",
+    "password": "noddy@123"
+}
+
+###
+
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "name": "pranav",
+    "password": "pranav@123"
+}
