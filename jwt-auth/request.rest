@@ -2,14 +2,19 @@
 
 GET http://localhost:3000/users
 
+### get post list
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibm9kZHkiLCJpYXQiOjE2NjY4NDI2NzN9.h61VnAG0L_HFJCMnRUAS6qNT-ALdilK3VRY3zhWJjV8
+
 ### create user
 
 POST http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name": "deep",
-    "password": "deep@123"
+    "name": "noddy",
+    "password": "noddy@123"
 }
 
 ###
@@ -18,6 +23,6 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "name": "pranav",
-    "password": "pranav@123"
+    "name": "noddy",
+    "password": "noddy@123"
 }
